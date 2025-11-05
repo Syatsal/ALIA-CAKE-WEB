@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produk</title>
+<style>
+/* === RESET & BASE === */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+a {text-decoration: none; color: #fff;}
+h1 {margin-bottom: 1rem;}
+
+/* === HEADER === */
+header {
+  background-color: #9c775c;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {font-size: 1.3rem; font-weight: 600; color: white;}
+nav ul {list-style: none; display: flex; gap: 1.5rem;}
+nav a {color: white; transition: 0.3s;}
+nav a:hover {opacity: 0.8;}
+.menu-toggle {display: none; flex-direction: column; cursor: pointer;}
+.menu-toggle span {height: 3px; width: 25px; background: white; margin: 4px 0; border-radius: 2px;}
+
+/* === MAIN === */
+main {padding: 2rem; text-align: center;}
+
+/* === FOOTER === */
+footer {
+  background-color: #9c775c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* === DEVELOPER GRID === */
+.dev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.dev-card {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.dev-card:hover {transform: scale(1.05);}
+.dev-card img {width: 100%; border-radius: 10px; margin-bottom: .5rem;}
+.dev-card h3 {color: #9c775c; margin-bottom: .3rem;}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  nav ul {display: none; flex-direction: column; background: #9c775c; position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0;}
+  nav ul.show {display: flex;}
+  .menu-toggle {display: flex;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ALIA CAKE</div>
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span><span></span><span></span>
+  </div>
+  <nav>
+    <ul id="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="produk.html">Produk</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="developer.html">Developer</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>Produk Kami</h1><p>Kami menyediakan kue ulang tahun, kue kering, bolu, dan pastry untuk berbagai acara spesial Anda.</p>
+</main>
+
+<footer>
+  © 2025 — ALIA CAKE
+</footer>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>
