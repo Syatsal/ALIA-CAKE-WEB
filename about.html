@@ -32,7 +32,16 @@ nav a:hover {opacity: 0.8;}
 .menu-toggle span {height: 3px; width: 25px; background: white; margin: 4px 0; border-radius: 2px;}
 
 /* === MAIN === */
-main {padding: 2rem; text-align: center;}
+main {
+  padding: 2rem 10%;
+  text-align: left;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  margin: 2rem;
+}
+main p {margin-bottom: 1rem;}
+ul {margin-left: 1.2rem; margin-bottom: 1rem;}
+li {margin-bottom: 0.5rem;}
 
 /* === FOOTER === */
 footer {
@@ -43,23 +52,6 @@ footer {
   font-size: 0.9rem;
   margin-top: 2rem;
 }
-
-/* === DEVELOPER GRID === */
-.dev-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.dev-card {
-  background: #1a1a1a;
-  padding: 1rem;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.dev-card:hover {transform: scale(1.05);}
-.dev-card img {width: 100%; border-radius: 10px; margin-bottom: .5rem;}
-.dev-card h3 {color: #9c775c; margin-bottom: .3rem;}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -88,7 +80,23 @@ footer {
 </header>
 
 <main>
-  <h1>Tentang Kami</h1><p>ALIA CAKE berdiri untuk menghadirkan kue dengan cita rasa istimewa dan bahan berkualitas tinggi.</p>
+  <h1>Tentang Kami</h1>
+  <p>Kami adalah usaha rumahan (homemade) yang berkomitmen menghadirkan kue dan hidangan lezat untuk setiap momen spesial Anda. 
+  Setiap produk dibuat langsung dari dapur kami dengan bahan pilihan, tanpa pengawet, dan selalu fresh agar cita rasa serta kualitasnya terjaga.</p>
+
+  <p>Produk andalan kami antara lain:</p>
+  <ul>
+    <li>🍩 <b>Donat lembut dan manis</b> – cocok untuk camilan keluarga atau sajian di berbagai acara.</li>
+    <li>🍰 <b>Aneka Cake homemade</b> – tersedia untuk perayaan ulang tahun, arisan, maupun acara spesial lainnya.</li>
+    <li>🍮 <b>Bolu</b> – dengan tekstur lembut dan isian manis yang pas di lidah.</li>
+    <li>🍍 <b>Nastar klasik</b> – nastar homemade dengan isian nanas manis legit, favorit sepanjang masa.</li>
+    <li>🎉 <b>Tumpeng spesial</b> – pilihan tepat untuk syukuran, ulang tahun, atau acara penting Anda.</li>
+    <li>🍞 <b>Roti Gulung lembut</b> – roti manis dengan gulungan isian lezat, pas untuk teman minum teh atau hadiah spesial.</li>
+  </ul>
+
+  <p>Bagi kami, kue bukan hanya sekadar makanan, tetapi juga bagian dari momen kebersamaan yang penuh arti. Karena itu, setiap adonan yang kami buat selalu kami lengkapi dengan ketulusan, cinta, dan semangat berbagi kebahagiaan.</p>
+
+  <p>✨ Dengan <b>Alia Cake</b>, biarkan setiap gigitan membawa senyum, rasa hangat, dan kenangan manis untuk Anda dan orang-orang tercinta.</p>
 </main>
 
 <footer>
