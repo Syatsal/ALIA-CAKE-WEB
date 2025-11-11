@@ -1,4 +1,5 @@
 <script>
+  // === MENU RESPONSIF (TITIK TIGA) ===
   const menuToggle = document.querySelector('.menu-toggle');
   const navMenu = document.querySelector('nav ul');
 
@@ -6,10 +7,9 @@
     navMenu.classList.toggle('show');
     menuToggle.classList.toggle('active');
   });
+
+  // === TOMBOL BELI PRODUK ===
+  function beli(nama) {
+    alert("Pesanan: " + nama + "\nSilakan hubungi admin WhatsApp ✅");
+  }
 </script>
-
-
-// TOMBOL BELI PRODUK
-function beli(nama) {
-  alert("Pesanan: " + nama + "\nSilakan hubungi admin WhatsApp ✅");
-}
