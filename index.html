@@ -5,20 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ALIA CAKE</title>
 
-<!-- Font Google -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
 
 <style>
 * {margin: 0; padding: 0; box-sizing: border-box;}
+html, body {height: 100%;}
+
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
   line-height: 1.6;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
   background-color: #9c775c;
   padding: 1rem 2rem;
@@ -41,9 +44,7 @@ nav a {
   text-decoration: none; 
   transition: 0.3s;
 }
-nav a:hover {
-  opacity: 0.8;
-}
+nav a:hover {opacity: .8;}
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -57,8 +58,9 @@ nav a:hover {
   border-radius: 2px;
 }
 
-/* === HERO === */
+/* HERO */
 .hero {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -77,10 +79,10 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 .hero-text p {
-  font-family:'Raleway', sans-serif;
   font-size: 1.2rem;
   color: #f0d9b5;
   letter-spacing: 1px;
+  max-width: 450px;
 }
 .hero-img {
   width: 40%;
@@ -91,16 +93,17 @@ nav a:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,0.4);
 }
 
-/* === FOOTER === */
+/* FOOTER */
 footer {
   background-color: #9c775c;
   color: #fff;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
-/* === RESPONSIVE === */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero {flex-direction: column; text-align: center;}
   .hero-text, .hero-img {max-width: 100%;}
@@ -134,8 +137,10 @@ footer {
     <h1>MANISNYA SETIAP GIGITAN DARI ALIA CAKE</h1>
     <p>KUE HOMEMADE, SEGAR DAN PENUH CINTA UNTUK SETIAP MOMEN SPESIAL ANDA</p>
   </div>
+
+  <!-- GANTI "cake.jpg" DENGAN FILE GAMBAR KAMU -->
   <div class="hero-img">
-    <img src="" alt="Kue Alia Cake">
+    <img src="cake.jpg" alt="Kue Alia Cake">
   </div>
 </section>
 
