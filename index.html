@@ -1,160 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALIA CAKE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALIA CAKE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
+  <!-- FONT GOOGLE -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
 
-<style>
-* {margin: 0; padding: 0; box-sizing: border-box;}
-html, body {height: 100%;}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* HEADER */
-header {
-  background-color: #9c775c;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  font-size: 1.3rem;
-  font-weight: 600; 
-  color: white;
-}
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-nav a {
-  color: white;
-  text-decoration: none; 
-  transition: 0.3s;
-}
-nav a:hover {opacity: .8;}
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  margin: 4px 0;
-  border-radius: 2px;
-}
-
-/* HERO */
-.hero {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4rem 8%;
-  background: url('index.png') no-repeat center/cover;
-  min-height: 90vh;
-}
-.hero-text {
-  max-width: 50%;
-}
-.hero-text h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.5rem;
-  color: #fff8e7;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  margin-bottom: 1rem;
-}
-.hero-text p {
-  font-size: 1.2rem;
-  color: #f0d9b5;
-  letter-spacing: 1px;
-  max-width: 450px;
-}
-.hero-img {
-  width: 40%;
-}
-.hero-img img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-}
-
-/* FOOTER */
-footer {
-  background-color: #9c775c;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero {flex-direction: column; text-align: center;}
-  .hero-text, .hero-img {max-width: 100%;}
-  .hero-img {margin-top: 2rem;}
-  nav ul {display: none; flex-direction: column; background: #9c775c; position: absolute; top: 60px; left: 0; width: 100%; padding: 1rem 0;}
-  nav ul.show {display: flex;}
-  .menu-toggle {display: flex;}
-}
-</style>
+  <!-- LINK KE CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="logo">ALIA CAKE</div>
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav>
-    <ul id="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="produk.html">Produk</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="developer.html">Developer</a></li>
-    </ul>
-  </nav>
-</header>
+  <header>
+    <div class="logo">ALIA CAKE</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="produk.html">Produk</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="developer.html">Developer</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section class="hero">
-  <div class="hero-text">
-    <h1>MANISNYA SETIAP GIGITAN DARI ALIA CAKE</h1>
-    <p>KUE HOMEMADE, SEGAR DAN PENUH CINTA UNTUK SETIAP MOMEN SPESIAL ANDA</p>
-  </div>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>MANISNYA SETIAP GIGITAN DARI ALIA CAKE</h1>
+      <p>KUE HOMEMADE, SEGAR DAN PENUH CINTA UNTUK SETIAP MOMEN SPESIAL ANDA</p>
+    </div>
 
-  <!-- GANTI "cake.jpg" DENGAN FILE GAMBAR KAMU -->
-  <div class="hero-img">
-    <img src="cake.jpg" alt="Kue Alia Cake">
-  </div>
-</section>
+    <div class="hero-img">
+      <img src="kue home.jpg" alt="Kue Alia Cake">
+    </div>
+  </section>
 
-<footer>
-  © 2025 — ALIA CAKE
-</footer>
+  <footer>
+    © 2025 — ALIA CAKE
+  </footer>
 
-<script>
-const menuToggle = document.getElementById('menu-toggle');
-const navList = document.getElementById('nav-list');
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
-</script>
+  <!-- LINK KE JAVASCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 </html>
