@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 a {
   text-decoration: none;
@@ -58,7 +59,7 @@ nav a:hover {
   flex-direction: column;
   cursor: pointer;
   position: absolute;
-  right: 20px; /* agak ke kanan */
+  right: 20px;
   top: 22px;
 }
 .menu-toggle span {
@@ -67,6 +68,7 @@ nav a:hover {
   background: white;
   margin: 4px 0;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* === HERO (Home Page) === */
@@ -77,7 +79,7 @@ nav a:hover {
   justify-content: space-between;
   padding: 4rem 8%;
   background: url('index.png') no-repeat center/cover;
-  min-height: 90vh;
+  min-height: calc(100vh - 140px);
 }
 .hero-text {
   max-width: 50%;
@@ -96,23 +98,23 @@ nav a:hover {
   max-width: 450px;
 }
 .hero-img {
-  width: 35%;
+  width: 50%;
 }
 .hero-img img {
   width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
   margin-top: 1rem;
   margin-bottom: 1rem;
-  max-height: 420px;
-  object-fit: cover;
 }
 
-/* === MAIN CONTENT (About, Contact, dll) === */
+/* === MAIN CONTENT (About, Produk, Contact, dll) === */
 main {
+  flex: 1;
   padding: 2rem;
   text-align: center;
-  flex: 1;
 }
 
 /* === PRODUK GRID === */
@@ -120,7 +122,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 15px;
-  padding: 100px 40px 20px 40px; /* ruang atas lebih besar agar header tidak tumpang tindih */
+  padding: 100px 40px 40px 40px;
   justify-items: center;
   text-align: center;
 }
@@ -188,7 +190,7 @@ main {
   margin-bottom: .3rem;
 }
 
-/* === FOOTER === */
+/* === FOOTER (SELALU DI BAWAH) === */
 footer {
   background-color: #9c775c;
   color: #fff;
@@ -196,39 +198,61 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 /* === RESPONSIVE MENU === */
 @media (max-width: 768px) {
   nav ul {
-    display: none;
+    display: flex;
     flex-direction: column;
     background: #9c775c;
     position: absolute;
     top: 60px;
-    right: 0; /* menu muncul dari kanan */
-    width: 60%;
+    right: -100%;
+    width: 65%;
     padding: 1rem 0;
     border-radius: 0 0 0 10px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.4s ease;
   }
   nav ul.show {
-    display: flex;
+    right: 0;
+    opacity: 1;
+    transform: translateX(0);
   }
   .menu-toggle {
     display: flex;
+  }
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
   }
 
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
   }
   .hero-text, .hero-img {
     max-width: 100%;
   }
   .hero-img {
+    order: -1;
     margin-top: 2rem;
-    order: -1; /* supaya gambar di atas teks, bukan di bawah footer */
+  }
+  .hero-img img {
+    width: 100%;
+    height: 300px; /* lebih panjang proporsional di hp */
+    object-fit: cover;
   }
 }
 
@@ -246,7 +270,7 @@ footer {
 @media (max-width: 600px) {
   .produk-container {
     grid-template-columns: 1fr;
-    padding: 90px 15px 20px 15px;
+    padding: 90px 15px 40px 15px;
   }
   .produk-card {
     max-width: 90%;
@@ -254,11 +278,6 @@ footer {
   .produk-card img {
     height: 220px;
   }
-}
-
-/* === SPESIAL WARNA UNTUK MENU DEVELOPER === */
-li .Developer {
-  color: #000000;
 }
 
 /* === ABOUT PAGE === */
@@ -280,7 +299,7 @@ li .Developer {
   margin-bottom: 0.5rem;
 }
 
-/* Highlight menu aktif */
+/* === ACTIVE NAV === */
 nav a.active {
   font-weight: 700;
   text-decoration: underline;

@@ -1,10 +1,13 @@
-// MENU RESPONSIVE
-const menuToggle = document.getElementById('menu-toggle');
-const navList = document.getElementById('nav-list');
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('nav ul');
 
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('show');
-});
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+  });
+</script>
+
 
 // TOMBOL BELI PRODUK
 function beli(nama) {
