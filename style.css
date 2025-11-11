@@ -113,11 +113,12 @@ main {
 /* === PRODUK GRID === */
 .produk-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 30px;
-  text-align: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;           
+  padding: 20px 40px;  
+  justify-items: center;
 }
+
 .produk-card {
   background-color: #9C775C;
   border-radius: 15px;
