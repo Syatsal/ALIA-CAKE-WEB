@@ -34,7 +34,6 @@ header {
   z-index: 1000;
   padding: 18px 0;
 }
-
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
@@ -61,7 +60,6 @@ nav {
   top: 50%;
   transform: translateY(-50%);
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -69,7 +67,6 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #fff;
@@ -80,8 +77,6 @@ nav ul li a {
   transition: all 0.3s ease;
   display: inline-block;
 }
-
-/* Efek hover dan aktif sama di semua menu */
 nav ul li a:hover,
 nav ul li a.active {
   background-color: #2b1a13;
@@ -89,8 +84,6 @@ nav ul li a.active {
   box-shadow: 0 0 10px rgba(249, 214, 122, 0.4);
   transform: translateY(-2px);
 }
-
-/* Animasi halus ketika diklik */
 nav ul li a:active {
   transform: scale(0.96);
 }
@@ -325,27 +318,54 @@ footer {
 }
 
 /* === RESPONSIVE === */
+
+/* Tablet (maksimal 992px) */
 @media (max-width: 992px) {
+  .header-inner {
+    padding: 0 20px;
+  }
   .produk-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 40px 20px;
+  }
+  .hero-text h1 {
+    font-size: 2.8rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
 }
 
+/* HP (maksimal 768px) */
 @media (max-width: 768px) {
-  .menu-toggle {display: flex;}
+  .menu-toggle {
+    display: flex;
+    z-index: 1100;
+  }
+  nav {
+    position: static;
+    transform: none;
+  }
   nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px;
+    top: 65px;
     right: 0;
     background-color: #a47f5a;
-    width: 200px;
-    text-align: right;
-    padding: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
     border-radius: 0 0 10px 10px;
   }
-  nav ul.show { display: flex; }
+  nav ul.show {
+    display: flex;
+  }
+  nav ul li a {
+    padding: 12px;
+    font-size: 18px;
+  }
 
   .hero {
     flex-direction: column;
@@ -353,15 +373,72 @@ footer {
     padding: 2rem 1rem;
     min-height: calc(100vh - 60px);
   }
-  .hero-text, .hero-img { max-width: 100%; }
-  .hero-img { order: -1; margin-top: 2rem; }
-  .hero-img img {
+  .hero-text {
+    max-width: 100%;
+    order: 2;
+  }
+  .hero-img {
+    order: 1;
     width: 90%;
-    height: 380px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-img img {
+    width: 100%;
+    height: auto;
+  }
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
   }
 
   .produk-container {
     grid-template-columns: 1fr;
-    padding: 50px 20px;
+    padding: 40px 15px;
+  }
+
+  .about-section {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .dev-grid {
+    grid-template-columns: 1fr;
+    margin: 0 1rem;
+  }
+  .dev-card img {
+    height: auto;
+  }
+
+  .contact-content {
+    padding: 100px 15px;
+  }
+  .contact-container {
+    gap: 15px;
+  }
+  .contact-item a {
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 15px 10px;
+  }
+}
+
+/* HP Kecil (maksimal 480px) */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+  .produk-card img {
+    height: 220px;
+  }
+  .Tim-developer {
+    font-size: 1.8rem;
   }
 }
