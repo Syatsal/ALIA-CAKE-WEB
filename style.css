@@ -387,10 +387,7 @@ footer {
     gap: 12px;
     padding: 80px 25px 20px 25px;
   }
-  .produk-card img {
-    height: 230px;
-  }
-}
+ 
 
 @media (max-width: 600px) {
   .produk-container {
@@ -401,6 +398,6 @@ footer {
     max-width: 90%;
   }
   .produk-card img {
-    height: 220px;
+    height: 230px;
   }
 }
