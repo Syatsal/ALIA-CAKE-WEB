@@ -107,13 +107,13 @@ nav a:hover {
 
 /* === HERO IMAGE (dikecilkan) === */
 .hero-img {
-  width: 40%;
+  width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .hero-img img {
-  width: 300px;             
+  width: 350px;             
   height: auto;              
   object-fit: cover;
   background-color: #fff; /
