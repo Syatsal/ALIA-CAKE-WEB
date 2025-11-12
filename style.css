@@ -51,6 +51,7 @@ header {
   color: #fff;
   letter-spacing: 1px;
   white-space: nowrap;
+  margin-left: 10px;
 }
 
 /* === NAVIGASI === */
@@ -59,6 +60,7 @@ nav {
   right: 50px;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1000;
 }
 nav ul {
   list-style: none;
@@ -66,6 +68,7 @@ nav ul {
   gap: 28px;
   margin: 0;
   padding: 0;
+  z-index: 1000;
 }
 nav ul li a {
   text-decoration: none;
@@ -98,6 +101,7 @@ nav ul li a:active {
   top: 50%;
   transform: translateY(-50%);
   z-index: 2000;
+  pointer-events: auto;
 }
 .menu-toggle span {
   background-color: #fff;
@@ -168,6 +172,8 @@ nav ul li a:active {
   gap: 20px;
   padding: 60px 50px;
   justify-items: center;
+  position: relative;
+  z-index: 1;
 }
 .produk-card {
   background-color: #9C775C;
