@@ -109,6 +109,7 @@ nav a:hover {
 .hero-img {
   width: 20%;
   display: flex;
+  border-radius: 20px;
   justify-content: center;
   align-items: center;
 }
