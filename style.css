@@ -81,9 +81,12 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4rem 8%;
+  padding: 3rem 7%;
+  min-height: 100vh;
   background: url('index.png') no-repeat center/cover;
-  min-height: calc(100vh - 140px);
+  border-top: 10px solid #9c775c;
+  border-bottom: 10px solid #9c775c;
+  position: relative;
 }
 .hero-text {
   max-width: 50%;
