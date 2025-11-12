@@ -107,19 +107,19 @@ nav a:hover {
 
 /* === HERO IMAGE (ukuran pas & proporsional) === */
 .hero-img {
-  width: 35%;                    /* lebih besar dari sebelumnya */
+  width: 35%;                   
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
 }
 .hero-img img {
-  width: 100%;                   /* isi area hero-img */
-  height: auto;                  /* biar tidak gepeng */
-  object-fit: contain;           /* tampil penuh tanpa terpotong */
+  width: 100%;          
+  height: auto;                
+  object-fit: contain;          
   border-radius: 15px;           
   padding: 8px;                  
-  background-color: transparent; /* tanpa kotak putih */
+  background-color: transparent;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
   margin-top: 1rem;
   margin-bottom: 1rem;
