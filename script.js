@@ -1,15 +1,12 @@
-<script>
-  // === MENU RESPONSIF (TITIK TIGA) ===
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('nav ul');
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.getElementById('nav-list');
 
-  menuToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('show');
-    menuToggle.classList.toggle('active');
-  });
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');
+  menuToggle.classList.toggle('open');
+});
 
-  // === TOMBOL BELI PRODUK ===
+
   function beli(nama) {
     alert("Pesanan: " + nama + "\nSilakan hubungi admin WhatsApp ✅");
   }
-</script>

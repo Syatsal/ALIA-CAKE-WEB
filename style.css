@@ -16,7 +16,15 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
+main {
+  flex: 1; /* pastikan wrapper utama konten diberi flex:1 */
+}
+
 a {
   text-decoration: none;
   color: #fff;
@@ -32,7 +40,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 18px 0;
+  padding: 18px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header-inner {
   max-width: 1200px;
@@ -53,19 +64,27 @@ header {
   white-space: nowrap;
 }
 
-/* === NAVIGASI === */
-nav {
-  position: absolute;
-  right: 50px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Hamburger Menu */
+.menu-toggle {
+  display: none; /* hanya tampil di HP */
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1100;
 }
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Navigasi desktop */
 nav ul {
-  list-style: none;
   display: flex;
   gap: 28px;
-  margin: 0;
-  padding: 0;
+  list-style: none;
 }
 nav ul li a {
   text-decoration: none;
@@ -75,7 +94,6 @@ nav ul li a {
   padding: 10px 20px;
   border-radius: 6px;
   transition: all 0.3s ease;
-  display: inline-block;
 }
 nav ul li a:hover,
 nav ul li a.active {
@@ -88,19 +106,64 @@ nav ul li a:active {
   transform: scale(0.96);
 }
 
-/* Menu Toggle (untuk HP) */
+/* === RESPONSIVE HP < 768px === */
+@media (max-width: 768px) {
+
+/* Hamburger di kanan */
 .menu-toggle {
-  display: none;
+  display: none; /* desktop tetap hidden */
   flex-direction: column;
   cursor: pointer;
+  position: absolute;
+  right: 20px; /* posisi kanan header */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
 }
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: #fff;
-  margin: 4px 0;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+
+  /* Navigasi HP default tersembunyi */
+  nav {
+    position: absolute;
+    top: 60px; /* di bawah header */
+    left: 0;
+    width: 100%;
+    background-color: #a47f5a;
+    display: none; /* default hidden */
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    padding: 12px;
+    display: block;
+  }
+
+  /* Tampilkan nav saat hamburger diklik */
+  nav ul.show {
+    display: flex;
+  }
+}
+
+/* === HAMBURGER ANIMASI === */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* === HERO (Home Page) === */
@@ -339,34 +402,6 @@ footer {
 
 /* HP (maksimal 768px) */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    z-index: 1100;
-  }
-  nav {
-    position: static;
-    transform: none;
-  }
-  nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 65px;
-    right: 0;
-    background-color: #a47f5a;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-    border-radius: 0 0 10px 10px;
-  }
-  nav ul.show {
-    display: flex;
-  }
-  nav ul li a {
-    padding: 12px;
-    font-size: 18px;
-  }
-
   .hero {
     flex-direction: column;
     text-align: center;
@@ -392,17 +427,14 @@ footer {
   .hero-text p {
     font-size: 1rem;
   }
-
   .produk-container {
     grid-template-columns: 1fr;
     padding: 40px 15px;
   }
-
   .about-section {
     padding: 1.5rem;
     margin: 1rem;
   }
-
   .dev-grid {
     grid-template-columns: 1fr;
     margin: 0 1rem;
@@ -410,7 +442,6 @@ footer {
   .dev-card img {
     height: auto;
   }
-
   .contact-content {
     padding: 100px 15px;
   }
@@ -420,10 +451,45 @@ footer {
   .contact-item a {
     font-size: 1rem;
   }
-
   footer {
     font-size: 0.9rem;
     padding: 15px 10px;
+  }
+  /* Tampilkan hamburger di HP */
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Navigasi HP */
+  nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #a47f5a;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li a {
+    font-size: 18px;
+    padding: 12px;
+    display: block;
+  }
+  nav ul.show {
+    display: flex;
   }
 }
 
@@ -441,4 +507,15 @@ footer {
   .Tim-developer {
     font-size: 1.8rem;
   }
+}
+
+/* === HAMBURGER ANIMASI === */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
