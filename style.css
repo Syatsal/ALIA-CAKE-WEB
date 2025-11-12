@@ -25,38 +25,57 @@ h1 {
   margin-bottom: 1rem;
 }
 
-/* === HEADER === */
+/* === HEADER & NAVIGATION === */
 header {
-  background-color: #9c775c;
-  padding: 1rem 2rem;
+  background-color: #a47f5a;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px 50px;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
   width: 100%;
 }
+
 .logo {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 22px; /* ukuran tetap */
+  color: #fff;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
+
+/* Navigasi */
 nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-nav a {
-  color: white;
-  transition: 0.3s;
-}
-nav a:hover {
-  opacity: 0.8;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
-/* === MENU TOGGLE === */
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px; /* ukuran tetap */
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+/* Hover dan aktif */
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #2b1a13;
+  color: #f9d67a;
+}
+
+/* Menu Toggle */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -66,12 +85,13 @@ nav a:hover {
   right: 20px;
   top: 22px;
 }
+
 .menu-toggle span {
   height: 3px;
   width: 25px;
-  background: white;
+  background: #fff;
   margin: 4px 0;
-  border-radius: 2px;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
@@ -105,7 +125,11 @@ nav a:hover {
   max-width: 450px;
 }
 
+
 /* === HERO IMAGE (ukuran pas & proporsional) === */
+
+/* === HERO IMAGE === */
+
 .hero-img {
   width: 35%;                   
   display: flex;
@@ -114,6 +138,7 @@ nav a:hover {
   border-radius: 20px;
 }
 .hero-img img {
+<<<<<<< HEAD
   width: 100%;          
   height: auto;                
   object-fit: contain;          
@@ -121,6 +146,15 @@ nav a:hover {
   padding: 8px;                  
   background-color: transparent;
   box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+=======
+  width: 350px;
+  height: auto;
+  object-fit: cover;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+>>>>>>> cd3dee7 (Update tampilan fix)
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -205,17 +239,6 @@ main {
   margin-bottom: .3rem;
 }
 
-/* === FOOTER SELALU DI BAWAH === */
-footer {
-  background-color: #9c775c;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  width: 100%;
-  margin-top: auto;
-}
-
 /* === ABOUT PAGE === */
 .about-section {
   padding: 2rem 10%;
@@ -235,18 +258,100 @@ footer {
   margin-bottom: 0.5rem;
 }
 
-/* === ACTIVE NAV === */
-nav a.active {
-  font-weight: 700;
-  text-decoration: underline;
+/* === CONTACT PAGE === */
+.contact-page {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+.contact-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('blackground.jpg') no-repeat center center/cover;
+  z-index: 1;
+}
+.contact-content {
+  position: relative;
+  z-index: 2;
+  padding: 150px 20px;
+}
+.contact-page h1 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.contact-item a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.contact-item a:hover {
+  color: #f3d17c;
+}
+.contact-item i {
+  font-size: 1.8em;
+}
+.whatsapp { color: #25D366; }
+.email { color: #f1c40f; }
+.facebook { color: #1877F2; }
+.instagram { color: #E4405F; }
+
+/* === FOOTER === */
+footer {
+  background-color: #9c775c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+  margin-top: auto;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  /* Menu toggle */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #a47f5a;
+    width: 200px;
+    text-align: right;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav ul.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .menu-toggle {
     display: flex;
   }
+
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
   }
@@ -257,25 +362,12 @@ nav a.active {
     transform: rotate(-45deg) translateY(-8px);
   }
 
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    background: #9c775c;
-    position: absolute;
-    top: 60px;
-    right: -100%;
-    width: 70%;
-    padding: 1rem 0;
-    border-radius: 0 0 0 10px;
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.4s ease;
-    z-index: 150;
+  /* Ukuran font tetap sama di mobile */
+  .logo {
+    font-size: 22px;
   }
-  nav ul.show {
-    right: 0;
-    opacity: 1;
-    transform: translateX(0);
+  nav ul li a {
+    font-size: 16px;
   }
 
   .hero {
@@ -308,6 +400,7 @@ nav a.active {
     height: 230px;
   }
 }
+
 @media (max-width: 600px) {
   .produk-container {
     grid-template-columns: 1fr;
