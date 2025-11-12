@@ -37,17 +37,13 @@ header {
   z-index: 100;
   width: 100%;
 }
-
 .logo {
-  font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  font-size: 22px; /* ukuran tetap */
+  font-size: 22px;
   color: #fff;
   letter-spacing: 1px;
   white-space: nowrap;
 }
-
-/* Navigasi */
 nav ul {
   list-style: none;
   display: flex;
@@ -56,26 +52,22 @@ nav ul {
   padding: 0;
   transition: all 0.3s ease-in-out;
 }
-
 nav ul li a {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
-  font-size: 16px; /* ukuran tetap */
+  font-size: 16px;
   padding: 8px 16px;
   border-radius: 5px;
   transition: all 0.3s;
-  white-space: nowrap;
 }
-
-/* Hover dan aktif */
 nav ul li a:hover,
 nav ul li a.active {
   background-color: #2b1a13;
   color: #f9d67a;
 }
 
-/* Menu Toggle */
+/* === MENU TOGGLE (RESPONSIVE NAV) === */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -85,7 +77,6 @@ nav ul li a.active {
   right: 20px;
   top: 22px;
 }
-
 .menu-toggle span {
   height: 3px;
   width: 25px;
@@ -95,7 +86,7 @@ nav ul li a.active {
   transition: all 0.3s ease;
 }
 
-/* === HERO (Home Page) === */
+/* === HERO (HOME PAGE) === */
 .hero {
   flex: 1;
   display: flex;
@@ -106,7 +97,6 @@ nav ul li a.active {
   background: url('index.png') no-repeat center/cover;
   border-top: 10px solid #9c775c;
   border-bottom: 10px solid #9c775c;
-  position: relative;
 }
 .hero-text {
   max-width: 50%;
@@ -124,83 +114,60 @@ nav ul li a.active {
   letter-spacing: 1px;
   max-width: 450px;
 }
-
-
-/* === HERO IMAGE (ukuran pas & proporsional) === */
-
-/* === HERO IMAGE === */
-
 .hero-img {
-  width: 35%;                   
+  width: 35%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
 }
 .hero-img img {
-
-  width: 100%;          
-  height: auto;                
-  object-fit: contain;          
-  border-radius: 15px;           
-  padding: 8px;                  
-  background-color: transparent;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
-  width: 350px;
-  height: auto;
+  width: 100%;
+  max-width: 400px;
+  height: 500px;
   object-fit: cover;
-  background-color: #fff;
   border-radius: 15px;
-  padding: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
->>>>>>> cd3dee7 (Update tampilan fix)
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* === MAIN CONTENT === */
-main {
-  flex: 1;
-  padding: 2rem;
-  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
 }
 
 /* === PRODUK GRID === */
 .produk-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-  padding: 100px 40px 40px 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 60px 50px;
   justify-items: center;
-  text-align: center;
 }
 .produk-card {
   background-color: #9C775C;
-  border-radius: 15px;
+  border-radius: 20px;
+  text-align: center;
   padding: 15px;
   width: 100%;
-  max-width: 340px;
+  max-width: 320px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  transition: transform .3s, box-shadow .3s;
+  transition: transform 0.3s ease;
 }
 .produk-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
 }
 .produk-card img {
   width: 100%;
-  height: 260px;
+  height: 280px;
   object-fit: cover;
   border-radius: 12px;
 }
+.produk-card h3, .produk-card p {
+  color: #000;
+}
 .produk-card h4 {
-  margin-top: 5px;
+  color: #1a8754;
+  font-weight: bold;
+  margin: 10px 0;
 }
 .btn {
   background: #000;
   color: #fff;
   padding: 8px 15px;
-  margin-top: 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -217,18 +184,25 @@ main {
   gap: 1rem;
   margin-top: 2rem;
 }
+.Tim-developer {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
 .dev-card {
   background: #1a1a1a;
   padding: 1rem;
   border-radius: 10px;
   transition: 0.3s;
 }
-.dev-card:hover {
-  transform: scale(1.05);
-}
+.dev-card:hover {transform: scale(1.05);}
 .dev-card img {
   width: 100%;
-  height: 280px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: .5rem;
@@ -241,7 +215,6 @@ main {
 /* === ABOUT PAGE === */
 .about-section {
   padding: 2rem 10%;
-  text-align: left;
   background-color: #1a1a1a;
   border-radius: 10px;
   margin: 2rem;
@@ -251,7 +224,6 @@ main {
 }
 .about-section ul {
   margin-left: 1.2rem;
-  margin-bottom: 1rem;
 }
 .about-section li {
   margin-bottom: 0.5rem;
@@ -267,10 +239,8 @@ main {
 }
 .contact-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: url('images/backgraound.png') no-repeat center center/cover;
   z-index: 1;
 }
@@ -279,37 +249,17 @@ main {
   z-index: 2;
   padding: 150px 20px;
 }
-.contact-page h1 {
-  font-size: 2.2em;
-  margin-bottom: 40px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-}
-.contact-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
-}
 .contact-item a {
   display: flex;
   align-items: center;
   gap: 15px;
   font-size: 1.2em;
   color: #fff;
-  text-decoration: none;
   transition: 0.3s;
 }
 .contact-item a:hover {
   color: #f3d17c;
 }
-.contact-item i {
-  font-size: 1.8em;
-}
-.whatsapp { color: #25D366; }
-.email { color: #f1c40f; }
-.facebook { color: #1877F2; }
-.instagram { color: #E4405F; }
 
 /* === FOOTER === */
 footer {
@@ -323,6 +273,129 @@ footer {
 }
 
 /* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .produk-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {display: flex;}
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #a47f5a;
+    width: 200px;
+    text-align: right;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+  }
+  nav ul.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 60px);
+  }
+  .hero-text, .hero-img {max-width: 100%;}
+  .hero-img {order: -1; margin-top: 2rem;}
+  .hero-img img {
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .produk-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 80px 25px 40px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .produk-container {
+    grid-template-columns: 1fr;
+    padding: 90px 15px 40px 15px;
+  }
+  .hero-img img {
+    height: 380px;
+  }
+}
+/* === HEADER & NAVIGATION === */
+header {
+  background-color: #a47f5a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Navigasi */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+/* Hover dan aktif */
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #2b1a13;
+  color: #f9d67a;
+}
+
+/* Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Responsif */
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -351,6 +424,7 @@ footer {
     display: flex;
   }
 
+  /* Efek animasi toggle berubah jadi X */
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
   }
@@ -360,55 +434,73 @@ footer {
   .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-8px);
   }
-
-  /* Ukuran font tetap sama di mobile */
-  .logo {
-    font-size: 22px;
-  }
-  nav ul li a {
-    font-size: 16px;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 60px);
-  }
-  .hero-text, .hero-img {
-    max-width: 100%;
-  }
-  .hero-img {
-    order: -1;
-    margin-top: 2rem;
-  }
-  .hero-img img {
-    width: 90%;
-    height: auto;
-    object-fit: contain;
-  }
 }
 
-@media (max-width: 992px) {
-  .produk-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 12px;
-    padding: 80px 25px 20px 25px;
-  }
-  .produk-card img {
-    height: 230px;
-  }
+/* === CONTACT PAGE === */
+.contact-page {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
 }
 
-@media (max-width: 600px) {
-  .produk-container {
-    grid-template-columns: 1fr;
-    padding: 90px 15px 40px 15px;
-  }
-  .produk-card {
-    max-width: 90%;
-  }
-  .produk-card img {
-    height: 220px;
-  }
+.contact-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('blackground.jpg') no-repeat center center/cover;
+  z-index: 1;
+}
+
+.contact-content {
+  position: relative;
+  z-index: 2;
+  padding: 150px 20px;
+}
+
+.contact-page h1 {
+  font-size: 2.2em;
+  margin-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.contact-item a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  color: #f3d17c;
+}
+
+.contact-item i {
+  font-size: 1.8em;
+}
+
+.whatsapp { color: #25D366; }
+.email { color: #f1c40f; }
+.facebook { color: #1877F2; }
+.instagram { color: #E4405F; }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #a47f5a;
+  color: #fff;
 }
