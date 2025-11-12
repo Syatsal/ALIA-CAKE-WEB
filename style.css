@@ -113,12 +113,12 @@ nav a:hover {
   align-items: center;
 }
 .hero-img img {
-  width: 300px;              /* dari 100% → 300px biar proporsional */
-  height: auto;              /* biarkan tinggi menyesuaikan */
+  width: 300px;             
+  height: auto;              
   object-fit: cover;
-  background-color: #fff;    /* latar belakang putih */
-  border-radius: 15px;       /* sudut melengkung */
-  padding: 10px;             /* jarak antara gambar & background putih */
+  background-color: #fff; /
+  border-radius: 15px;     
+  padding: 10px;             
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
   margin-top: 1rem;
   margin-bottom: 1rem;
